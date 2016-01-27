@@ -65,9 +65,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if(!isJump){
-            let touch : AnyObject? = touches.anyObject();
+            let touch = touches.first
             if (touch != nil) {
                 
                 let jumpAction : SKAction = SKAction.moveTo(CGPointMake(player.position.x, player.position.y + 200), duration: 0.3);

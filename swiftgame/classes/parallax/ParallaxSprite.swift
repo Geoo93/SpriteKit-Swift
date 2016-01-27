@@ -11,7 +11,7 @@ import SpriteKit
 class ParallaxSprite: SKSpriteNode {
     
     var parallaxSpeed : Double = 0.0;
-    let parallaxName : String = "";
+    var parallaxName : String = "";
     var image1 : SKSpriteNode!
     var image2 : SKSpriteNode!
     
@@ -27,8 +27,8 @@ class ParallaxSprite: SKSpriteNode {
         super.init(texture: texture, color: color, size:size)
     }
     
-    init(name : String, speed : Double, frame: CGRect) {
-        super.init();
+    convenience init(name : String, speed : Double, frame: CGRect) {
+        self.init()
         
         self.parallaxName = name;
         self.parallaxSpeed = speed;
